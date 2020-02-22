@@ -19,13 +19,13 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String hello() {
-		return toString();
+		return "hello, world.  " + toString();
 	}
 
 	@Override
 	public String toString() {
-		final StringBuffer sb = new StringBuffer("Hello World {");
-		sb.append("name='").append(name).append('\'');
+		final StringBuffer sb = new StringBuffer("{");
+		sb.append("app name='").append(name).append('\'');
 		sb.append(", version='").append(version).append('\'');
 		sb.append(", profile='").append(profile).append('\'');
 		sb.append('}');
