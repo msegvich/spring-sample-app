@@ -1,14 +1,34 @@
 package com.example.springsampleapp;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
 
+	@Value("${info.app.name:#{null}}")
+	private String name;
+
+	@Value("${info.app.version:#{null}}")
+	private String version;
+
+	@Value("${spring.profiles.active:none}")
+	private String profile;
+
+
 	@RequestMapping("/")
 	public String hello() {
-		return "hello world at 4:37 PM!!!";
+		return toString();
 	}
 
+	@Override
+	public String toString() {
+		final StringBuffer sb = new StringBuffer("Hello World {");
+		sb.append("name='").append(name).append('\'');
+		sb.append(", version='").append(version).append('\'');
+		sb.append(", profile='").append(profile).append('\'');
+		sb.append('}');
+		return sb.toString();
+	}
 }
