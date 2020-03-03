@@ -1,6 +1,5 @@
 HELP.md
-target/*
-!target/spring-sample-app-1.0.0.jar
+target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
