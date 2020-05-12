@@ -19,7 +19,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String hello() {
-		return "hello, world.  " + toString();
+		return "hello, k8s world.  " + toString();
 	}
 
 	@Override
